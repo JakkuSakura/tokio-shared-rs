@@ -3,10 +3,10 @@ use std::time::Duration;
 use std::{io::Write, path::PathBuf};
 use tokio_shared::SharedTokioHandle;
 
-#[tokio::main]
+#[tokio::main(flavor = "current_thread")]
 async fn main() {
     // build example-lib
-    // let cdylib = build_dylib();
+    let cdylib = build_dylib();
 
     // log in the normal program
     println!("program println!");
@@ -15,7 +15,7 @@ async fn main() {
     // log in the rust dylib
     run_dylib(&handle);
     // log in the cdylib, see `example-lib/src/lib.rs`
-    // run_cdylib(cdylib, &handle);
+    run_cdylib(cdylib, &handle);
     // wait for spawned tasks to finish
     tokio::time::sleep(Duration::from_secs(1)).await
 }

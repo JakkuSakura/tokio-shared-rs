@@ -2,7 +2,7 @@
 
 Share a tokio Runtime between a dylib/cdylib and the main binary
 
-Caution: cdylib is not properly supported yet
+Caution: multi-thread flavor is not supported yet
 
 ## Usage
 
