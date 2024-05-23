@@ -1,0 +1,27 @@
+[package]
+name = "tokio-shared"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["JakkuSakura <qjk2001@gmail.com>"]
+license = "MIT/Apache-2.0"
+description = "Share tokio Runtime bwtween dylibs"
+repository = "https://github.com/JakkuSakura/tokio-shared-rs"
+
+
+[dependencies]
+tracing = { version = "0.1", features = [] }
+tokio = { version = "1", features = ["full"] }
+
+[features]
+default = []
+
+
+[dev-dependencies]
+libloading = "0.8"
+example-lib = { path = "examples/example-lib" }
+
+
+[workspace]
+members = [".", "examples/example-lib"]
+default-members = ["."]

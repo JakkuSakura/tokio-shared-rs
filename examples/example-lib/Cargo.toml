@@ -1,0 +1,14 @@
+[package]
+name = "example-lib"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+tokio-shared = { path = "../.." }
+
+tokio = { version = "1", features = ["full"] }
+
